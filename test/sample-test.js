@@ -43,35 +43,11 @@ describe("Bond", function () {
   }
 
   it("simple bond", async function () {
-        // await 
-        // await depositToBank();
-
-        // for(let i = 0;i < 20;i++) {
-        //     console.log(1)
-        //     await bonding.connect(user1).bond(toTokenAmount(100), 0);
-        //     await logBalance(user1);
-        //     await logBalance(feeTo);
-        // }
-        
-
-        // await (await oracle.setPrice(["SKU"], [toTokenAmount(0.1)]));
-
-        // let result = await bonding.connect(user1).callStatic.unbond(toTokenAmount(100), 0);
-
-        // console.log(`result: ${toMathAmount(result[0])} ${toMathAmount(result[1])}`)
-        console.log(2);
         await bonding.connect(user1).unbond(toTokenAmount(100), 0);
         await logBalance(user1);
         await logBalance(feeTo);
 
-
-        console.log(3);
         await bonding.connect(user1).bond(toTokenAmount(100), 0);
-        await logBalance(user1);
-        await logBalance(feeTo);
-
-        console.log(3);
-        await bonding.connect(user1).unbond(toTokenAmount(100), 0);
         await logBalance(user1);
         await logBalance(feeTo);
    });
